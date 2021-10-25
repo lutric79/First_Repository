@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Data Providers Suite">
+
+<listeners>
+   <listener class-name="dataProviders.ListenersDataProviders"/>
+</listeners>
+
+  <test thread-count="5" name="Data Import Test">
+    <classes>
+      <class name="dataProviders.ImportFromExcelTest"/>
+      <class name="dataProviders.UserNameAndPasswordTest"/>
+      <class name="dataProviders.CustomerEligibilityTest2"/>
+    </classes>
+  </test> <!-- Data Import Test -->
+</suite> <!-- Data Providers Suite -->
