@@ -15,7 +15,7 @@ public class TelcoLandingPage extends BasePage {
 	}
 
 	public void goHome() {
-		driver.get(getDataConfigProperties("systemUnderTest"));
+		driver.get(getDataConfigProperties("systemUnderTest2"));
 	}
 
 }

@@ -14,7 +14,7 @@ public class HomeLoan1 {
 		System.out.println("This is a home loan");
 		//Assert.assertTrue(false);
 		String expected = "Passed test";
-		String actual = "Faile test";
+		String actual = "Failed test";
 		
 		Reporter.log("actual is " +actual);
 		Reporter.log("expected is " +expected);

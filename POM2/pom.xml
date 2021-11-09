@@ -171,7 +171,7 @@
 		<profile>
 			<id>Screenshots</id>
 			<build>
-				<pluginManagement>
+				
 					<plugins>
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
@@ -189,7 +189,7 @@
 							<configuration>
 							<reportsDirectory>${project.build.directory}/surefire-reports-${maven.build.timestamp}</reportsDirectory>
 								<suiteXmlFiles>
-									<suiteXmlFile>DataImport.xml</suiteXmlFile>
+									<suiteXmlFile>ListenersAssignment2.xml</suiteXmlFile>
 								</suiteXmlFiles>
 							</configuration>
 						</plugin>
@@ -210,6 +210,10 @@
 								</execution>
 							</executions>
 						</plugin>
+						</plugins>
+						
+						<pluginManagement>
+						<plugins>
 						<plugin>
 							<groupId>org.eclipse.m2e</groupId>
 							<artifactId>lifecycle-mapping</artifactId>
