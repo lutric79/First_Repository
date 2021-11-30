@@ -27,7 +27,7 @@ public class BasePage {
 		if (driver == null) {
 			// Get parameter values
 			String browser = getDataConfigProperties("browser");
-			String systemUnderTest = getDataConfigProperties("systemUnderTest2");
+			String systemUnderTest = getDataConfigProperties("systemUnderTest");
 			String pdriverDirChrome = getDataConfigProperties("driverDirChrome");
 			String pdriverDirFireFox = getDataConfigProperties("driverdirFireFox");
 			String pdriverDirEdge = getDataConfigProperties("Edgedriver");
