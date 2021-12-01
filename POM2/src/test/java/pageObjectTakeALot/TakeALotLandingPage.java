@@ -21,7 +21,7 @@ public class TakeALotLandingPage extends BasePage {
 		//try {
 			if( driver.findElement(By.xpath("//button[@class='button cookies-banner-module_dismiss-button_24Z98']")).isDisplayed())
 		{
-			System.out.println("First");
+			//System.out.println("First");
 			clickElement(By.xpath("//button[@class='button cookies-banner-module_dismiss-button_24Z98']"));
 		}
 		//}catch (Exception e)
