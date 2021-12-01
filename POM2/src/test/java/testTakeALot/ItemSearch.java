@@ -2,17 +2,17 @@ package testTakeALot;
 
 
 
-import java.io.IOException;
+//import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
+//import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.SkipException;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -36,7 +36,7 @@ public class ItemSearch extends BasePage{
 	@BeforeTest
 	public void Restore() 
 	{
-		//tLandingPage.goHome();
+		
 		tLandingPage.acceptCookies();
 
 
@@ -46,7 +46,6 @@ public class ItemSearch extends BasePage{
 	public void GIVEN_ItemIsSelected_WHEN_AddToCartIsClicked_THEN_AddToCartButtonIsDisplayed() throws InterruptedException  {
 
 		tLandingPage.goHome();
-		//tLandingPage.acceptCookies();
 		tLandingPage.enterSearchItem("Office & Stationery");
 		tLandingPage.clickSearchButton();
 		tLandingPage.clickMarcoSearchBox();
@@ -60,6 +59,24 @@ public class ItemSearch extends BasePage{
 		String ExpectedAddToCartText = "Added to cart";
 
 		Assert.assertEquals(ActualAddToCartText, ExpectedAddToCartText);	
+
+	}
+	
+	@Test
+	public void GIVEN_YouAreDailyDeals_WHEN_ItemIsSelected_THEN_SkipTheTestCase() throws InterruptedException  {
+
+		tLandingPage.goHome();
+		//tLandingPage.acceptCookies();
+		tLandingPage.clickDailyDeals();
+		tLandingPage.selectBrand();
+		tLandingPage.cleanup();
+		Iselection.selecAddToCart1();
+		System.out.println(Iselection.getAddedToCartText());
+		String ActualAddToCartText = Iselection.getAddedToCartText();
+		String ExpectedAddToCartText = "Added to cart";
+
+		Assert.assertEquals(ActualAddToCartText, ExpectedAddToCartText);
+		throw new SkipException("This is a skipped test case");
 
 	}
 
@@ -92,14 +109,12 @@ public class ItemSearch extends BasePage{
 	@Test
 	public void GIVEN_YouNavigateToCart_WHEN_QuantityIsSelected_THEN_CartValueIsDisplayedCorrectly() throws InterruptedException {
 		tLandingPage.goHome();
-		//tLandingPage.acceptCookies();
 		tLandingPage.enterSearchItem("Office & Stationery");
 		tLandingPage.clickSearchButton();
 		tLandingPage.clickMarcoSearchBox();
 		tLandingPage.selectBrand();
-		driver.close();
+		tLandingPage.cleanup();
 		Iselection.selecAddToCart();
-		//System.out.println(Iselection.getAddedToCartText());
 		Mycart.GoToCart();
 		Mycart.SelectQuantity();
 
@@ -148,17 +163,21 @@ public class ItemSearch extends BasePage{
 
 	public void dataImportList(String Brand,String Quantity) throws InterruptedException {
 		tLandingPage.goHome();
-		//System.out.println("This is an excel data import test");
 		System.out.println("The brand name is "+ Brand + " and the quantity is " + Quantity );
 		tLandingPage.enterSearchItem(Brand);
 		tLandingPage.clickSearchButton();
 		tLandingPage.clearSearch();
 		tLandingPage.selectBrand();
-		driver.close();
+		tLandingPage.cleanup();
 		System.out.println(Brand+ " is a selected brand");
 		Iselection.selecAddToCart();
 		Mycart.GoToCart();
 		Mycart.brandQuauntity(Quantity);
+		
+		String Expected = "Shopping Cart";
+		String Actual = Mycart.ShoppingCartText();
+		
+		Assert.assertEquals(Expected, Actual);
 		
 
 
@@ -174,6 +193,12 @@ public class ItemSearch extends BasePage{
 
 
 
+
+	}
+	
+	@AfterSuite
+	public void cleanup() {
+		tLandingPage.cleanup();
 
 	}
 

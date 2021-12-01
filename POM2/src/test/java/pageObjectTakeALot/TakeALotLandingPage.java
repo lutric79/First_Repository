@@ -57,6 +57,14 @@ public class TakeALotLandingPage extends BasePage {
 		   clickElement(By.xpath("//a[@class='product-anchor product-card-module_product-anchor_TUCBV']"));
 		   }
 	
+	public void clickDailyDeals() {
+		   clickElement(By.xpath("//img[@alt='Daily Deals Flyout x2.png']"));
+		   }
+	
+	public void cleanup() {
+		driver.close();
+	}
+	
 	
 //
 //	

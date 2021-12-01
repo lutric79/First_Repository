@@ -58,6 +58,9 @@ public class Cart extends BasePage {
 		sel.selectByValue(bQuantity);
 	}
 	
+	public String ShoppingCartText() {
+		return getElementText(By.cssSelector(".cart-content-module_title_24yoi"));
+	}
 	
 
 }
