@@ -33,6 +33,10 @@ public class Cart extends BasePage {
 	public String PriceOfCartItems() {
 		return getElementText(By.xpath("//*[contains(text(),'Cart Summary')]/..//span[contains(@class,'currency plus currency-module_currency_29IIm')]"));
 	}
+		
+	public String PriceOfCartItems2() {
+		return getElementText(By.xpath("//*[contains(text(),'Cart Summary')]/..//span[contains(@class,'currency plus currency-module_currency_29IIm')]"));
+	}
 	public void SelectQuantity() {
 		clickElement(By.xpath("//select[@id='cart-item_undefined']//option[@value='2']"));
 	}

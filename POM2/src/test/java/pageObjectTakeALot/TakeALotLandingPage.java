@@ -45,7 +45,7 @@ public class TakeALotLandingPage extends BasePage {
 		clickElement(By.xpath("//button[@type='submit']"));
 	}
 	
-	public void clickMarcoSearchBox() {
+	public void BrandSelection() {
 		clickElement(By.xpath("//div[@class='entry-label  entry-label-module_entry-label_1fAP5']"));
 	}
 	
@@ -57,7 +57,7 @@ public class TakeALotLandingPage extends BasePage {
 		return getElementText(By.xpath("//div[@class='search-count toolbar-module_search-count_P0ViI search-count-module_search-count_1oyVQ']"));
 	}
 	
-	public void selectBrand() {
+	public void FirstItemSelection() {
 		   clickElement(By.xpath("//a[@class='product-anchor product-card-module_product-anchor_TUCBV']"));
 		   }
 	

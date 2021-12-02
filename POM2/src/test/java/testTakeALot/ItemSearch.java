@@ -37,8 +37,8 @@ public class ItemSearch extends BasePage{
 		tLandingPage.goHome();
 		tLandingPage.enterSearchItem("Office & Stationery");
 		tLandingPage.clickSearchButton();
-		tLandingPage.clickMarcoSearchBox();
-		tLandingPage.selectBrand();
+		tLandingPage.BrandSelection();
+		tLandingPage.FirstItemSelection();
 		Iselection.selecAddToCart1();
 		System.out.println(Iselection.getAddedToCartText());
 
@@ -77,7 +77,7 @@ public class ItemSearch extends BasePage{
 		//tLandingPage.acceptCookies();
 		tLandingPage.enterSearchItem("Office & Stationery");
 		tLandingPage.clickSearchButton();
-		tLandingPage.clickMarcoSearchBox();
+		tLandingPage.BrandSelection();
 
 		String NumberOfItemsResults = tLandingPage.noOfItems();
 		System.out.println(NumberOfItemsResults);
@@ -100,20 +100,28 @@ public class ItemSearch extends BasePage{
 		tLandingPage.goHome();
 		tLandingPage.enterSearchItem("Office & Stationery");
 		tLandingPage.clickSearchButton();
-		tLandingPage.clickMarcoSearchBox();
-		tLandingPage.selectBrand();
+		tLandingPage.BrandSelection();
+		tLandingPage.FirstItemSelection();
+		String PriceOfItem = Mycart.ItemPrice();
+		String formattedPriceOfItem = PriceOfItem.substring(2);
+		int TruePriceOfItem = Integer.parseInt(formattedPriceOfItem);
 		tLandingPage.cleanup();
+
+
 		Iselection.selecAddToCart();
 		Mycart.GoToCart();
-		Mycart.SelectQuantity();
-		Thread.sleep(1000);
 
-		String PriceOfItem = Mycart.ItemPrice();
+		Mycart.SelectQuantity();
+		Thread.sleep(5000);
+
+		String CartValue = Mycart.PriceOfCartItems2();
+		String CartPrice = CartValue.substring(2);
+		int TrueCartPrice = Integer.parseInt(CartPrice);
+
 		System.out.println("The price of item is " +PriceOfItem);
-		String formattedPriceOfItem = PriceOfItem.substring(2);
 		System.out.println("The price of formatted item price  is "+ "R"+formattedPriceOfItem);
 
-		int TruePriceOfItem = Integer.parseInt(formattedPriceOfItem);
+
 
 
 		WebElement quantityList = getElement(By.id("cart-item_undefined"));
@@ -128,15 +136,16 @@ public class ItemSearch extends BasePage{
 
 		int totalPrice = TruePriceOfItem*TrueQuantityValue;
 
-		System.out.println("The total price is "+ "R"+totalPrice);
-
-		String CartValue = Mycart.PriceOfCartItems();
 		System.out.println("The price of cart items is " +CartValue);
 
-		String CartPrice = CartValue.substring(2);
+		System.out.println("The total price is "+ "R"+totalPrice);
+
+
 		System.out.println("The formatted price is "+ "R"+CartPrice);
 
-		int TrueCartPrice = Integer.parseInt(CartPrice);
+
+
+
 		System.out.println("The formatted CartPrice is "+ "R"+TrueCartPrice);
 
 		if(totalPrice==TrueCartPrice) {
@@ -154,30 +163,28 @@ public class ItemSearch extends BasePage{
 		tLandingPage.enterSearchItem(Brand);
 		tLandingPage.clickSearchButton();
 		tLandingPage.clearSearch();
-		tLandingPage.selectBrand();
+		tLandingPage.FirstItemSelection();
 		tLandingPage.cleanup();
 		System.out.println(Brand+ " is a selected brand");
 		Iselection.selecAddToCart();
 		Mycart.GoToCart();
 		Mycart.brandQuauntity(Quantity);
-		
+
 		String PriceOfExcelItem = Mycart.ItemPrice();
 		System.out.println("The price of excel item is " +PriceOfExcelItem);
-		
-	    }
-		
-//		String formattedPriceExcelOfItem = PriceOfExcelItem.substring(2);
-//		System.out.println("The price of formatted item price  is "+ "R"+formattedPriceExcelOfItem);
-//		int TruePriceOfExcelItem = Integer.parseInt(formattedPriceExcelOfItem);
-//		int TrueExcelQuantity = Integer.parseInt(Quantity);
-////		System.out.println("The price of formatted item price  is "+ "R"+TruePriceOfExcelItem);
-////		System.out.println("The price of formatted quantity  is "+ TrueExcelQuantity);
-//		int totalExcelPrice = TruePriceOfExcelItem*TrueExcelQuantity;
-//		System.out.println("The total excel price is "+ totalExcelPrice);
-		
 
-		
-	//}
+		String formattedPriceExcelOfItem = PriceOfExcelItem.substring(2);
+		System.out.println("The price of formatted item price  is "+ "R"+formattedPriceExcelOfItem);
+
+				int TruePriceOfExcelItem = Integer.parseInt(formattedPriceExcelOfItem);
+				int TrueExcelQuantity = Integer.parseInt(Quantity);
+				
+			   System.out.println("The price of formatted item price  is "+ "R"+TruePriceOfExcelItem);
+		//	   System.out.println("The price of formatted quantity  is "+ TrueExcelQuantity);
+				int totalExcelPrice = TruePriceOfExcelItem*TrueExcelQuantity;
+				System.out.println("The total excel price is "+ totalExcelPrice);
+
+	}
 
 
 	@DataProvider(name = "excelBrandData")
