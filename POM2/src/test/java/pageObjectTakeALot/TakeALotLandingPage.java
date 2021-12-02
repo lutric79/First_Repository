@@ -53,6 +53,10 @@ public class TakeALotLandingPage extends BasePage {
 		return getElementText(By.xpath("//div[@class='search-count toolbar-module_search-count_P0ViI search-count-module_search-count_1oyVQ']"));
 	}
 	
+	public String noOfDeals() {
+		return getElementText(By.xpath("//div[@class='search-count toolbar-module_search-count_P0ViI search-count-module_search-count_1oyVQ']"));
+	}
+	
 	public void selectBrand() {
 		   clickElement(By.xpath("//a[@class='product-anchor product-card-module_product-anchor_TUCBV']"));
 		   }

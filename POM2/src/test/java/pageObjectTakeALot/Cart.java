@@ -31,7 +31,7 @@ public class Cart extends BasePage {
 	}
 	
 	public String PriceOfCartItems() {
-		return getElementText(By.cssSelector(".cart-content-module_summary_2IGcE.cart-summary-module_cart-summary_1x3dS .currency.currency-module_currency_29IIm.plus"));
+		return getElementText(By.xpath("//*[contains(text(),'Cart Summary')]/..//span[contains(@class,'currency plus currency-module_currency_29IIm')]"));
 	}
 	public void SelectQuantity() {
 		clickElement(By.xpath("//select[@id='cart-item_undefined']//option[@value='2']"));
@@ -58,9 +58,7 @@ public class Cart extends BasePage {
 		sel.selectByValue(bQuantity);
 	}
 	
-	public String ShoppingCartText() {
-		return getElementText(By.cssSelector(".cart-content-module_title_24yoi"));
-	}
+	
 	
 
 }
