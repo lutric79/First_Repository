@@ -106,6 +106,7 @@ public class ItemSearch extends BasePage{
 		Iselection.selecAddToCart();
 		Mycart.GoToCart();
 		Mycart.SelectQuantity();
+		Thread.sleep(1000);
 
 		String PriceOfItem = Mycart.ItemPrice();
 		System.out.println("The price of item is " +PriceOfItem);
@@ -159,12 +160,24 @@ public class ItemSearch extends BasePage{
 		Iselection.selecAddToCart();
 		Mycart.GoToCart();
 		Mycart.brandQuauntity(Quantity);
+		
+		String PriceOfExcelItem = Mycart.ItemPrice();
+		System.out.println("The price of excel item is " +PriceOfExcelItem);
+		
+	    }
+		
+//		String formattedPriceExcelOfItem = PriceOfExcelItem.substring(2);
+//		System.out.println("The price of formatted item price  is "+ "R"+formattedPriceExcelOfItem);
+//		int TruePriceOfExcelItem = Integer.parseInt(formattedPriceExcelOfItem);
+//		int TrueExcelQuantity = Integer.parseInt(Quantity);
+////		System.out.println("The price of formatted item price  is "+ "R"+TruePriceOfExcelItem);
+////		System.out.println("The price of formatted quantity  is "+ TrueExcelQuantity);
+//		int totalExcelPrice = TruePriceOfExcelItem*TrueExcelQuantity;
+//		System.out.println("The total excel price is "+ totalExcelPrice);
+		
 
-		String Expected = "Shopping Cart";
-		//String Actual = Mycart.ShoppingCartText();
-
-		//Assert.assertEquals(Expected, Actual);
-	}
+		
+	//}
 
 
 	@DataProvider(name = "excelBrandData")
