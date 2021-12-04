@@ -176,7 +176,7 @@ public class ItemSearch extends BasePage{
 
 		Iselection.selecAddToCart();
 		Mycart.GoToCart();
-		Mycart.SelectQuantityParameterized(Quantity);
+		Mycart.SelectBrandQuantity(Quantity);
 		Thread.sleep(10000);
 		int TrueExcelQuantity = Integer.parseInt(Quantity);
 

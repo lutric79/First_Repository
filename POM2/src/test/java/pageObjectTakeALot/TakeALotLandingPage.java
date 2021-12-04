@@ -16,8 +16,7 @@ public class TakeALotLandingPage extends BasePage {
 	}
 	
 	public void acceptCookies() { 
-//		if (ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='button cookies-banner-module_dismiss-button_24Z98']"))!= null)
-//		clickElement(By.xpath("//button[@class='button cookies-banner-module_dismiss-button_24Z98']"));
+
 		//try {
 			if( driver.findElement(By.xpath("//button[@class='button cookies-banner-module_dismiss-button_24Z98']")).isDisplayed())
 		{
@@ -70,50 +69,7 @@ public class TakeALotLandingPage extends BasePage {
 	}
 	
 	
-//
-//	
-//	public void selectBrand() {
-//		clickElement(By.xpath("//div[@class='product-card-module_add-to-cart-button-wrapper_3HLmD']"));
-//	}
-//	
-//	public void selectBrand1() {
-//		clickElement(By.xpath("//div[@class='card-section product-card-module_card-section_1Zz_k']"));
-//	}
-//	
-//	public void selectBrand2() {
-//		clickElement(By.xpath("//div[@class='product-thumb-wrapper product-card-module_product-thumb-wrapper_3XM-L']"));
-//	}
-//	
-   
-//	
-//	public void selectProduct() {
-//		clickElement(By.xpath("//a[@class='button  expanded add-to-cart-button add-to-cart-button-module_add-to-cart-button_1a9gT ghost']"));
-//	}
-//	
-//	public void selectCart() {
-//		clickElement(By.xpath("//button[@class='button badge-button mini-cart-button dark-green  badge-button-module_badge-button_3TXVp badge-button-module_badge-icon_LvKrF badge-button-module_badge-count_28PIS']"));
-//	}
-//	
-//	public void clickQuantityDropdown() {
-//		clickElement(By.xpath("//select[@id='cart-item_undefined']//option[@value='2']"));
-//	}
-//	
-//	public void selectQuantity() {
-//		clickElement(By.xpath("//option[@value='2']"));
-//	}
-//	
-//	public void selecAddToCart() {
-//		clickElement(By.xpath("//a[@class='button  expanded add-to-cart-button add-to-cart-button-module_add-to-cart-button_1a9gT']"));
-//	}
-//	
-//	public void selectCartOut() {
-//		clickElement(By.xpath("//action[@class='badge-button-module_badge-icon_LvKrF']"));
-//	}
-//	
-//	public void selecQuantity() {
-//		clickElement(By.xpath("//option [@value='2']"));
-//	}
-//	
+
 
 
 }

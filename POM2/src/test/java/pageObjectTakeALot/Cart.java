@@ -29,11 +29,11 @@ public class Cart extends BasePage {
 	public String ItemPrice() {
 		return getElementText(By.xpath("//span[@class='currency plus currency-module_currency_29IIm']"));
 	}
-	
-	public String PriceOfCartItems() {
-		return getElementText(By.xpath("//*[contains(text(),'Cart Summary')]/..//span[contains(@class,'currency plus currency-module_currency_29IIm')]"));
-	}
-		
+//	
+//	public String PriceOfCartItems() {
+//		return getElementText(By.xpath("//*[contains(text(),'Cart Summary')]/..//span[contains(@class,'currency plus currency-module_currency_29IIm')]"));
+//	}
+//		
 	public String PriceOfCartItems2() {
 		return getElementText(By.xpath("//*[contains(text(),'Cart Summary')]/..//span[contains(@class,'currency plus currency-module_currency_29IIm')]"));
 	}
@@ -41,11 +41,7 @@ public class Cart extends BasePage {
 		clickElement(By.xpath("//select[@id='cart-item_undefined']//option[@value='2']"));
 	}
 	
-	
-//	public String cartValue() {
-//		return getElementText(By.xpath("//span[@class='currency plus currency-module_currency_29IIm']"));
-//	}
-	
+//	
 	public void GoToCart() throws InterruptedException {
 		Set<String> handles = driver.getWindowHandles(); 
 		Iterator<String> it = handles.iterator();
@@ -55,28 +51,21 @@ public class Cart extends BasePage {
 		clickElement(By.xpath("//button[@class='button checkout-now dark']"));
 		
 	}
+//	
+//	public void brandQuauntity(String bQuantity) {
+//		clickElement(By.xpath("//select[@id='cart-item_undefined']"));
+//		Select sel = new Select(driver.findElement(By.xpath("//select[@id='cart-item_undefined']")));
+//		sel.selectByValue(bQuantity);
+//	}
 	
-	public void brandQuauntity(String bQuantity) {
-		clickElement(By.xpath("//select[@id='cart-item_undefined']"));
-		Select sel = new Select(driver.findElement(By.xpath("//select[@id='cart-item_undefined']")));
-		sel.selectByValue(bQuantity);
-	}
-	
-	public void SelectQuantityParameterized(String TrueExcelQuantity) {
+	public void SelectBrandQuantity(String TrueExcelQuantity) {
 		selectDropdown(By.id("cart-item_undefined"), TrueExcelQuantity);
 	}
 	
-	public void closeCurrentBrowserTab() {
-		closeChildBrowserTab();
+//	public void closeCurrentBrowserTab() {
+//		closeChildBrowserTab();
+//	
+//	}
 	
-	}
-	
-	public void SwitchToNewTab() {
-		Set<String> handles = driver.getWindowHandles(); // selenium will check how many windows are currently open,
-															// this will store the ID for both parent and child window
-		Iterator<String> it = handles.iterator(); // using the it object you can access the ID
-		String parentWindowID = it.next();
-		String childWindowID = it.next();
-		driver.switchTo().window(childWindowID); // switch to new window by passing the ID of the child window
-	}
+
 }
