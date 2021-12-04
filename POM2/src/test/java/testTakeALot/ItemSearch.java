@@ -150,6 +150,8 @@ public class ItemSearch extends BasePage{
 			System.out.println("Cart Value is displayed correctly");
 			Assert.assertTrue(true);
 		}else System.out.println("Cart Value is displayed incorrectly");
+		
+		driver.manage().deleteAllCookies();
 
 
 	}
@@ -197,6 +199,7 @@ public class ItemSearch extends BasePage{
 		System.out.println(TrueCartPrice + " When it's cast to int");
 		
 		System.out.println("The price of formatted item price is  "+ currency.format(TrueCartPrice));
+		
 
 
 		if(TrueCartPrice==totalExcelPrice) {
@@ -204,7 +207,7 @@ public class ItemSearch extends BasePage{
 			Assert.assertTrue(true);
 		}else System.out.println("The True Cart Price is displayed incorrectly");
 		
-		Thread.sleep(1000);
+		driver.manage().deleteAllCookies();
 
 
 
