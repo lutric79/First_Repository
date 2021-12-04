@@ -62,7 +62,15 @@ public class Cart extends BasePage {
 		sel.selectByValue(bQuantity);
 	}
 	
+	public double GetTotalPrice(int truePriceOfItem, int TrueExcelQuantity) {
+		return truePriceOfItem*TrueExcelQuantity;
+		
+	}
+	
+	public void closeCurrentBrowserTab() {
+		closeChildBrowserTab();
 	
 	
-
+	
+}
 }

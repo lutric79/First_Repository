@@ -4,7 +4,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Iterator;
 import java.util.Properties;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -143,6 +145,16 @@ public class BasePage {
 		Select sDrpDown = new Select(getElement(pLocator));
 		// Populates the dropdown
 		sDrpDown.selectByVisibleText(pValue);
+	}
+	
+	public void closeChildBrowserTab() {
+		Set<String> handles = driver.getWindowHandles();         //selenium will check how many windows are currently open, this will store the ID for both parent and child window
+		Iterator<String> it = handles.iterator();                //using the it object you can access the ID
+		String parentWindowID = it.next();
+		String childWindowID = it.next();
+	    driver.switchTo().window(childWindowID);
+	    driver.close();
+	    driver.switchTo().window(parentWindowID);
 	}
 
 }
